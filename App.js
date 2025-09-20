@@ -1,7 +1,6 @@
 // App.js
 import React, { useState, useMemo } from "react";
 import {
-  SafeAreaView,
   View,
   Text,
   TextInput,
@@ -11,6 +10,8 @@ import {
   Alert,
   ScrollView,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 
 /*
   Access Simulator - React Native
@@ -39,13 +40,17 @@ const SAMPLE = [
 ];
 
 function timeToMinutes(hhmm) {
+  // Ensure input is a string
   if (!hhmm || typeof hhmm !== "string") return NaN;
+  // Split into hours and minutes
   const parts = hhmm.split(":").map(s => parseInt(s, 10));
+  // Validate result
   if (parts.length !== 2 || isNaN(parts[0]) || isNaN(parts[1])) return NaN;
   return parts[0] * 60 + parts[1];
 }
 
 function padMin(m) {
+   // Convert total minutes into HH:MM format
   const hh = Math.floor(m / 60).toString().padStart(2, "0");
   const mm = (m % 60).toString().padStart(2, "0");
   return `${hh}:${mm}`;
@@ -77,11 +82,12 @@ export default function App() {
       // normalize types
       for (let i = 0; i < parsed.length; i++) {
         const r = parsed[i];
+        // parameter pass to validationRequestObj Function
         if (!validateRequestObj(r)) {
           Alert.alert("Input error", `Request at index ${i} is missing required fields or has wrong types.`);
           return null;
         }
-  
+        // Convert access_level string to integer
         parsed[i].access_level = Number(parsed[i].access_level);
       }
       return parsed;
@@ -259,9 +265,6 @@ export default function App() {
   );
 }
 
-
-
-
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: "#f7fafc" },
   container: { padding: 16, paddingBottom: 40 },
@@ -288,12 +291,12 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   primary: { backgroundColor: "#0ea5a4", borderColor: "#0ea5a4" },
-  btnText: { color: "#0f172a", fontWeight: "600" },
+  btnText: { color: "#0f182a", fontWeight: "600" },
   infoRow: { marginBottom: 6 },
   small: { color: "#475569", fontSize: 13 },
   roomBox: {
     backgroundColor: "#fff",
-    borderRadius: 8,
+    borderRadius: 10,
     padding: 10,
     borderWidth: 1,
     borderColor: "#e2e8f0",
@@ -301,12 +304,12 @@ const styles = StyleSheet.create({
   },
   roomRow: { marginBottom: 8 },
   resultsHeader: { marginTop: 6, marginBottom: 6 },
-  resultsTitle: { fontSize: 16, fontWeight: "700" },
+  resultsTitle: { fontSize: 15, fontWeight: "700" },
   summary: { flexDirection: "row", gap: 12, marginBottom: 8 },
   summaryText: { fontWeight: "700" },
   resultRow: {
     padding: 10,
-    borderRadius: 8,
+    borderRadius: 7,
     marginBottom: 8,
     borderWidth: 1,
     borderColor: "#e6eef0",
