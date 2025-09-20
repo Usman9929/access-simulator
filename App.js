@@ -269,13 +269,13 @@ const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: "#f7fafc" },
   container: { padding: 16, paddingBottom: 40 },
   header: { fontSize: 20, fontWeight: "700", marginBottom: 6 },
-  sub: { color: "#475569", marginBottom: 12 },
+  sub: { color: "#475579", marginBottom: 12 },
   input: {
     minHeight: 160,
     borderWidth: 1,
     borderColor: "#e2e8f0",
     backgroundColor: "#fff",
-    borderRadius: 8,
+    borderRadius: 9,
     padding: 10,
     fontFamily: "monospace",
     marginBottom: 12,
@@ -290,7 +290,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     marginRight: 8,
   },
-  primary: { backgroundColor: "#0ea5a4", borderColor: "#0ea5a4" },
+  primary: { backgroundColor: "#0ea5a5", borderColor: "#0ea5a4" },
   btnText: { color: "#0f182a", fontWeight: "600" },
   infoRow: { marginBottom: 6 },
   small: { color: "#475569", fontSize: 13 },
@@ -315,11 +315,11 @@ const styles = StyleSheet.create({
     borderColor: "#e6eef0",
     backgroundColor: "#fff"
   },
-  granted: { borderColor: "#d1fae5", backgroundColor: "#f0fdf4" },
-  denied: { borderColor: "#fee2e2", backgroundColor: "#fff7f7" },
+  granted: { borderColor: "#d1fae6", backgroundColor: "#f0fdf4" },
+  denied: { borderColor: "#fee2e2", backgroundColor: "#fff7f8" },
   reqTitle: { fontWeight: "700" },
   badge: { paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6, fontWeight: "700" },
-  badgeOk: { backgroundColor: "#ecfdf5", color: "#065f46" },
+  badgeOk: { backgroundColor: "#ecfdf5", color: "#065f47" },
   badgeNo: { backgroundColor: "#fff1f2", color: "#991b1b" },
-  reason: { marginTop: 6, color: "#334155" }
+  reason: { marginTop: 6, color: "#334156" }
 });   
